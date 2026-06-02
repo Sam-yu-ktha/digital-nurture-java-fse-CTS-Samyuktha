@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        form {
+            width: 400px;
+            padding: 20px;
+            border: 1px solid gray;
+        }
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 8px 15px;
+        }
+        output {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function registerEvent() {
+            document.getElementById("message").innerHTML =
+                "Registration submitted successfully!";
+        }
+    </script>
+</head>
+<body>
+    <h1>Event Registration Form</h1>
+    <form>
+        <label>Name:</label>
+        <input type="text"
+               placeholder="Enter your name"
+               required
+               autofocus>
+        <label>Email:</label>
+        <input type="email"
+               placeholder="Enter your email"
+               required>
+        <label>Event Date:</label>
+        <input type="date" required>
+        <label>Event Type:</label>
+        <select required>
+            <option value="">Select Event</option>
+            <option>Music Festival</option>
+            <option>Sports Meet</option>
+            <option>Art Exhibition</option>
+            <option>Book Fair</option>
+        </select>
+        <label>Message:</label>
+        <textarea rows="4"
+                  placeholder="Enter your message">
+        </textarea>
+        <button type="submit">
+            Submit
+        </button>
+        <br><br>
+        <output id="message"></output>
+    </form>
+</body>
+</html>

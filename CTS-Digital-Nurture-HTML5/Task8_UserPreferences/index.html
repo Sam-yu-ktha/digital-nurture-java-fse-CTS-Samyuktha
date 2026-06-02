@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Save User Preference</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        select, button {
+            padding: 8px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Preference</h1>
+    <label>Select Preferred Event:</label>
+    <br><br>
+    <select id="eventType">
+        <option value="">Select Event</option>
+        <option value="Music Event">Music Event</option>
+        <option value="Sports Event">Sports Event</option>
+        <option value="Art Event">Art Event</option>
+        <option value="Book Fair">Book Fair</option>
+    </select>
+    <br>
+    <button onclick="savePreference()">
+        Save Preference
+    </button>
+    <button onclick="clearPreference()">
+        Clear Preferences
+    </button>
+    <p id="message"></p>
+<script>
+function savePreference() {
+    let eventType =
+    document.getElementById("eventType").value;
+    localStorage.setItem(
+        "preferredEvent",
+        eventType
+    );
+    sessionStorage.setItem(
+        "preferredEvent",
+        eventType
+    );
+    document.getElementById("message").innerHTML =
+    "Preference Saved Successfully";
+}
+window.onload = function() {
+    let savedEvent =
+    localStorage.getItem("preferredEvent");
+    if(savedEvent){
+        document.getElementById("eventType").value =
+        savedEvent;
+        document.getElementById("message").innerHTML =
+        "Saved Preference Loaded";
+    }
+}
+function clearPreference() {
+    localStorage.clear();
+    sessionStorage.clear();
+    document.getElementById("message").innerHTML =
+    "Preferences Cleared";
+}
+</script>
+</body>
+</html>

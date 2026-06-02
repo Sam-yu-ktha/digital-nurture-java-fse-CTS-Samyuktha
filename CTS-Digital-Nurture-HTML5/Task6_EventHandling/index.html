@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Feedback</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        img{
+            width: 200px;
+            height: 120px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Community Event Feedback</h1>
+    <label>Phone Number:</label>
+    <input type="text"
+           id="phone"
+           onblur="validatePhone()">
+    <br><br>
+    <label>Select Event:</label>
+    <select id="eventType"
+            onchange="showFee()">
+        <option value="">Select</option>
+        <option value="200">Music Event</option>
+        <option value="150">Sports Event</option>
+        <option value="100">Art Event</option>
+    </select>
+    <p id="fee"></p>
+    <button onclick="submitFeedback()">
+        Submit
+    </button>
+    <br><br>
+    <img src="event1.jpg"
+         alt="Music Event"
+         ondblclick="enlargeImage(this)">
+    <p>Double click the image to enlarge it.</p>
+    <label>Feedback:</label>
+    <br>
+    <textarea id="feedback"
+              rows="4"
+              cols="40"
+              onkeyup="countCharacters()">
+    </textarea>
+    <p>
+        Characters Typed:
+        <span id="count">0</span>
+    </p>
+<script>
+function validatePhone(){
+    let phone =
+    document.getElementById("phone").value;
+    if(phone.length != 10){
+        alert("Phone number should contain 10 digits");
+    }
+}
+function showFee(){
+    let fee =
+    document.getElementById("eventType").value;
+    document.getElementById("fee").innerHTML =
+    "Event Fee : Rs. " + fee;
+}
+function submitFeedback(){
+    alert("Feedback Submitted Successfully");
+}
+function enlargeImage(img){
+    img.style.width = "350px";
+    img.style.height = "220px";
+}
+function countCharacters(){
+    let text =
+    document.getElementById("feedback").value;
+    document.getElementById("count").innerHTML =
+    text.length;
+}
+</script>
+</body>
+</html>

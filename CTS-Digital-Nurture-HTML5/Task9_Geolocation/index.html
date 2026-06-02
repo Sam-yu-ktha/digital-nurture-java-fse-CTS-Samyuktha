@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Geolocation Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        button {
+            padding: 8px 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Find Nearby Events</h1>
+    <button onclick="getLocation()">
+        Find Nearby Events
+    </button>
+    <p id="location"></p>
+<script>
+function getLocation() {
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(
+            showPosition,
+            showError,
+            {
+                enableHighAccuracy: true,
+                timeout: 5000
+            }
+        );
+    }
+    else{
+        document.getElementById("location").innerHTML =
+        "Geolocation is not supported.";
+    }
+}
+function showPosition(position){
+    document.getElementById("location").innerHTML =
+    "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+}
+function showError(error){
+    if(error.code == 1){
+        alert("Permission Denied");
+    }
+    else if(error.code == 3){
+        alert("Request Timed Out");
+    }
+    else{
+        alert("Unable to Get Location");
+    }
+}
+</script>
+</body>
+</html>
