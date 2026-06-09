@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Local Community Event Portal</title>
+
+    <!-- Exercise 1: External CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Exercise 1: Internal CSS -->
+    <style>
+        body{
+            background-color:#f4f4f4;
+        }
+    </style>
+
+    <!-- Exercise 5: Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Exercise 1: Inline CSS -->
+    <h1 id="mainHeader" style="color:red;">
+        Local Community Event Portal
+    </h1>
+
+    <nav>
+        <ul class="navMenu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="eventCard">
+        <h2>Music Festival</h2>
+
+        <img src="event1.jpg" alt="Music Festival">
+
+        <p>
+            Enjoy live music performances and cultural celebrations with local artists.
+        </p>
+    </section>
+
+    <section class="eventCard">
+        <h2>Sports Meet</h2>
+
+        <img src="event2.jpg" alt="Sports Meet">
+
+        <p>
+            Participate in various sports events and team competitions.
+        </p>
+    </section>
+
+    <h2>Upcoming Events</h2>
+
+    <table>
+        <tr>
+            <th>Event</th>
+            <th>Date</th>
+            <th>Location</th>
+        </tr>
+
+        <tr>
+            <td>Music Festival</td>
+            <td>10 June 2026</td>
+            <td>Chennai</td>
+        </tr>
+
+        <tr>
+            <td>Sports Meet</td>
+            <td>15 June 2026</td>
+            <td>Coimbatore</td>
+        </tr>
+
+        <tr>
+            <td>Book Fair</td>
+            <td>20 June 2026</td>
+            <td>Madurai</td>
+        </tr>
+    </table>
+
+    <h2>Community Bulletin</h2>
+
+    <div class="newsSection">
+        The Local Community Event Portal helps citizens stay informed about upcoming events,
+        social activities, cultural celebrations, educational programs, sports competitions,
+        public meetings, and volunteer opportunities. Residents can participate in activities,
+        connect with their communities, and stay updated on local developments.
+    </div>
+
+    <h2>Registration Form</h2>
+
+    <form>
+
+        <input type="text" placeholder="Enter Name">
+
+        <input type="email" placeholder="Enter Email">
+
+        <input type="text" class="highlightField" placeholder="Selected Field">
+
+    </form>
+
+    <div class="hiddenBox">
+        Hidden using visibility:hidden
+    </div>
+
+    <div class="noneBox">
+        Hidden using display:none
+    </div>
+
+</body>
+
+</html>
